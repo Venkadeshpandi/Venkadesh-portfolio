@@ -206,27 +206,29 @@ const CaseStudyModal = ({ project, onClose }) => {
                         <span className="text-accent/90">720p HD • 2m 14s</span>
                       </div>
 
-                      {/* HTML5 Video Element - 16:9 Widescreen */}
+                      {/* Google Drive Video Player - Cloud Streaming */}
                       <div className="relative aspect-video bg-black flex items-center justify-center">
-                        <video
-                          controls
-                          controlsList="nodownload"
-                          disablePictureInPicture
-                          onContextMenu={(e) => e.preventDefault()}
-                          playsInline
-                          preload="metadata"
-                          poster={`${import.meta.env.BASE_URL}hyundai-poster.png`}
-                          className="w-full h-full object-contain"
-                        >
-                          <source src={`${import.meta.env.BASE_URL}hyundai%20final%20edited.mp4`} type="video/mp4" />
-                          Your browser does not support the video tag.
-                        </video>
+                        <iframe
+                          src="https://drive.google.com/file/d/1I4rgYpPR5vPW9OD-etXH1gxcXOB5vQIs/preview"
+                          className="w-full h-full border-0"
+                          allow="autoplay; fullscreen"
+                          allowFullScreen
+                          title="Hyundai Motor India Facility Tour"
+                        />
                       </div>
 
                       {/* Video Caption Footer */}
                       <div className="p-3 bg-surface/60 border-t border-border/50 flex flex-col sm:flex-row items-center justify-between text-center sm:text-left gap-2 font-mono text-[0.68rem] text-textMuted tracking-wider uppercase">
                         <span>Hyundai Motor India • Industrial Kitchen Facility</span>
-                        <span className="text-accent">Execution & Commissioning Handover</span>
+                        <a
+                          href="https://drive.google.com/file/d/1I4rgYpPR5vPW9OD-etXH1gxcXOB5vQIs/view?usp=sharing"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 text-accent hover:text-accentSecondary transition-colors"
+                        >
+                          <span>Open in Google Drive</span>
+                          <ExternalLink size={13} />
+                        </a>
                       </div>
                     </div>
 
@@ -316,27 +318,29 @@ const CaseStudyModal = ({ project, onClose }) => {
                         <span className="text-accent/90">720p HD • 1m 59s</span>
                       </div>
 
-                      {/* HTML5 Video Element - 16:9 Widescreen */}
+                      {/* Google Drive Video Player - Cloud Streaming */}
                       <div className="relative aspect-video bg-black flex items-center justify-center">
-                        <video
-                          controls
-                          controlsList="nodownload"
-                          disablePictureInPicture
-                          onContextMenu={(e) => e.preventDefault()}
-                          playsInline
-                          preload="metadata"
-                          poster={`${import.meta.env.BASE_URL}lloyds-poster.png`}
-                          className="w-full h-full object-contain"
-                        >
-                          <source src={`${import.meta.env.BASE_URL}lloyds%20metals%20final.mp4`} type="video/mp4" />
-                          Your browser does not support the video tag.
-                        </video>
+                        <iframe
+                          src="https://drive.google.com/file/d/1OuYZ-iipdnRzmhnA2vPeqKv-Ba4wKJ9w/preview"
+                          className="w-full h-full border-0"
+                          allow="autoplay; fullscreen"
+                          allowFullScreen
+                          title="Lloyds Metals & Energy Facility Tour"
+                        />
                       </div>
 
                       {/* Video Caption Footer */}
                       <div className="p-3 bg-surface/60 border-t border-border/50 flex flex-col sm:flex-row items-center justify-between text-center sm:text-left gap-2 font-mono text-[0.68rem] text-textMuted tracking-wider uppercase">
                         <span>Lloyds Metals & Energy Limited • Industrial Kitchen Facility</span>
-                        <span className="text-accent">Execution & Commissioning Handover</span>
+                        <a
+                          href="https://drive.google.com/file/d/1OuYZ-iipdnRzmhnA2vPeqKv-Ba4wKJ9w/view?usp=sharing"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 text-accent hover:text-accentSecondary transition-colors"
+                        >
+                          <span>Open in Google Drive</span>
+                          <ExternalLink size={13} />
+                        </a>
                       </div>
                     </div>
 
