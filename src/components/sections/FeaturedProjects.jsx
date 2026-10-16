@@ -441,21 +441,15 @@ const CaseStudyModal = ({ project, onClose }) => {
                         </div>
                       </div>
 
-                      {/* Native HTML5 Video Player - Default 1080p Full HD Resolution */}
+                      {/* Google Drive Video Player - 1080p Full HD Cloud Streaming */}
                       <div className="relative aspect-video bg-black flex items-center justify-center">
-                        <video
-                          controls
-                          controlsList="nodownload"
-                          disablePictureInPicture
-                          onContextMenu={(e) => e.preventDefault()}
-                          playsInline
-                          preload="metadata"
-                          poster={`${import.meta.env.BASE_URL}tata-poster.jpg`}
-                          className="w-full h-full object-contain"
-                        >
-                          <source src={`${import.meta.env.BASE_URL}tata%20kalinganagar%20final.mp4`} type="video/mp4" />
-                          Your browser does not support the video tag.
-                        </video>
+                        <iframe
+                          src="https://drive.google.com/file/d/1dTq7fVX65Q_IPKheQBRV5PQpE7tD1fKb/preview"
+                          className="w-full h-full border-0"
+                          allow="autoplay; fullscreen"
+                          allowFullScreen
+                          title="Tata Steel Kalinganagar 3D Walkthrough Animation"
+                        />
                       </div>
 
                       {/* Video Caption Footer */}
