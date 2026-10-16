@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, X, CheckCircle2, ExternalLink } from 'lucide-react';
+import { ArrowRight, X, CheckCircle2, ShieldCheck } from 'lucide-react';
 
 const projectsData = [
   {
@@ -200,35 +200,35 @@ const CaseStudyModal = ({ project, onClose }) => {
                       {/* Video Player Header Bar */}
                       <div className="px-4 py-3 bg-surface/90 border-b border-border/60 flex items-center justify-between font-mono text-[0.65rem] sm:text-xs text-textMuted uppercase tracking-wider">
                         <div className="flex items-center gap-2">
-                          <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+                          <span className="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
                           <span className="text-textLight font-medium">FACILITY TOUR • HYUNDAI MOTOR INDIA</span>
                         </div>
-                        <span className="text-accent/90">720p HD • 2m 14s</span>
+                        <div className="flex items-center gap-2">
+                          <span className="px-2 py-0.5 rounded bg-accent/15 text-accent border border-accent/30 font-bold">1080p FULL HD</span>
+                          <span className="text-textMuted hidden sm:inline">• 2m 14s</span>
+                        </div>
                       </div>
 
-                      {/* Google Drive Video Player - Cloud Streaming */}
-                      <div className="relative aspect-video bg-black flex items-center justify-center">
+                      {/* Google Drive Video Player - Cloud Streaming with Popout Blocker */}
+                      <div className="relative aspect-video bg-black flex items-center justify-center overflow-hidden" onContextMenu={(e) => e.preventDefault()}>
+                        {/* Top-Right Overlay Guard: Disables Google Drive Pop-out download button */}
+                        <div className="absolute top-0 right-0 w-16 h-14 z-20 pointer-events-auto" title="1080p Full HD Protected Stream" />
                         <iframe
                           src="https://drive.google.com/file/d/1I4rgYpPR5vPW9OD-etXH1gxcXOB5vQIs/preview"
-                          className="w-full h-full border-0"
+                          className="w-full h-full border-0 select-none"
                           allow="autoplay; fullscreen"
                           allowFullScreen
                           title="Hyundai Motor India Facility Tour"
                         />
                       </div>
 
-                      {/* Video Caption Footer */}
-                      <div className="p-3 bg-surface/60 border-t border-border/50 flex flex-col sm:flex-row items-center justify-between text-center sm:text-left gap-2 font-mono text-[0.68rem] text-textMuted tracking-wider uppercase">
+                      {/* Video Caption Footer - Strictly Non-Downloadable Protected Badge */}
+                      <div className="p-3 bg-surface/60 border-t border-border/50 flex flex-col sm:flex-row items-center justify-between text-center sm:text-left gap-2 font-mono text-[0.68rem] text-textMuted tracking-wider uppercase select-none">
                         <span>Hyundai Motor India • Industrial Kitchen Facility</span>
-                        <a
-                          href="https://drive.google.com/file/d/1I4rgYpPR5vPW9OD-etXH1gxcXOB5vQIs/view?usp=sharing"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 text-accent hover:text-accentSecondary transition-colors"
-                        >
-                          <span>Open in Google Drive</span>
-                          <ExternalLink size={13} />
-                        </a>
+                        <div className="flex items-center gap-1.5 text-textMuted font-mono text-[0.68rem] tracking-wider uppercase">
+                          <ShieldCheck size={13} className="text-accent" />
+                          <span>Protected Media • Non-Downloadable</span>
+                        </div>
                       </div>
                     </div>
 
@@ -312,35 +312,35 @@ const CaseStudyModal = ({ project, onClose }) => {
                       {/* Video Player Header Bar */}
                       <div className="px-4 py-3 bg-surface/90 border-b border-border/60 flex items-center justify-between font-mono text-[0.65rem] sm:text-xs text-textMuted uppercase tracking-wider">
                         <div className="flex items-center gap-2">
-                          <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+                          <span className="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
                           <span className="text-textLight font-medium">FACILITY TOUR • LLOYDS METALS & ENERGY</span>
                         </div>
-                        <span className="text-accent/90">720p HD • 1m 59s</span>
+                        <div className="flex items-center gap-2">
+                          <span className="px-2 py-0.5 rounded bg-accent/15 text-accent border border-accent/30 font-bold">1080p FULL HD</span>
+                          <span className="text-textMuted hidden sm:inline">• 1m 59s</span>
+                        </div>
                       </div>
 
-                      {/* Google Drive Video Player - Cloud Streaming */}
-                      <div className="relative aspect-video bg-black flex items-center justify-center">
+                      {/* Google Drive Video Player - Cloud Streaming with Popout Blocker */}
+                      <div className="relative aspect-video bg-black flex items-center justify-center overflow-hidden" onContextMenu={(e) => e.preventDefault()}>
+                        {/* Top-Right Overlay Guard: Disables Google Drive Pop-out download button */}
+                        <div className="absolute top-0 right-0 w-16 h-14 z-20 pointer-events-auto" title="1080p Full HD Protected Stream" />
                         <iframe
                           src="https://drive.google.com/file/d/1OuYZ-iipdnRzmhnA2vPeqKv-Ba4wKJ9w/preview"
-                          className="w-full h-full border-0"
+                          className="w-full h-full border-0 select-none"
                           allow="autoplay; fullscreen"
                           allowFullScreen
                           title="Lloyds Metals & Energy Facility Tour"
                         />
                       </div>
 
-                      {/* Video Caption Footer */}
-                      <div className="p-3 bg-surface/60 border-t border-border/50 flex flex-col sm:flex-row items-center justify-between text-center sm:text-left gap-2 font-mono text-[0.68rem] text-textMuted tracking-wider uppercase">
+                      {/* Video Caption Footer - Strictly Non-Downloadable Protected Badge */}
+                      <div className="p-3 bg-surface/60 border-t border-border/50 flex flex-col sm:flex-row items-center justify-between text-center sm:text-left gap-2 font-mono text-[0.68rem] text-textMuted tracking-wider uppercase select-none">
                         <span>Lloyds Metals & Energy Limited • Industrial Kitchen Facility</span>
-                        <a
-                          href="https://drive.google.com/file/d/1OuYZ-iipdnRzmhnA2vPeqKv-Ba4wKJ9w/view?usp=sharing"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 text-accent hover:text-accentSecondary transition-colors"
-                        >
-                          <span>Open in Google Drive</span>
-                          <ExternalLink size={13} />
-                        </a>
+                        <div className="flex items-center gap-1.5 text-textMuted font-mono text-[0.68rem] tracking-wider uppercase">
+                          <ShieldCheck size={13} className="text-accent" />
+                          <span>Protected Media • Non-Downloadable</span>
+                        </div>
                       </div>
                     </div>
 
@@ -445,29 +445,26 @@ const CaseStudyModal = ({ project, onClose }) => {
                         </div>
                       </div>
 
-                      {/* Google Drive Video Player - 1080p Full HD Cloud Streaming */}
-                      <div className="relative aspect-video bg-black flex items-center justify-center">
+                      {/* Google Drive Video Player - 1080p Full HD Cloud Streaming with Popout Blocker */}
+                      <div className="relative aspect-video bg-black flex items-center justify-center overflow-hidden" onContextMenu={(e) => e.preventDefault()}>
+                        {/* Top-Right Overlay Guard: Disables Google Drive Pop-out download button */}
+                        <div className="absolute top-0 right-0 w-16 h-14 z-20 pointer-events-auto" title="1080p Full HD Protected Stream" />
                         <iframe
                           src="https://drive.google.com/file/d/1dTq7fVX65Q_IPKheQBRV5PQpE7tD1fKb/preview"
-                          className="w-full h-full border-0"
+                          className="w-full h-full border-0 select-none"
                           allow="autoplay; fullscreen"
                           allowFullScreen
                           title="Tata Steel Kalinganagar 3D Walkthrough Animation"
                         />
                       </div>
 
-                      {/* Video Caption Footer */}
-                      <div className="p-3 bg-surface/60 border-t border-border/50 flex flex-col sm:flex-row items-center justify-between text-center sm:text-left gap-2 font-mono text-[0.68rem] text-textMuted tracking-wider uppercase">
-                        <span>Tata Steel Kalinganagar • 3D Kitchen Digital Twin (1080p Native)</span>
-                        <a
-                          href="https://drive.google.com/file/d/1dTq7fVX65Q_IPKheQBRV5PQpE7tD1fKb/view?usp=sharing"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1.5 text-accent hover:text-accentSecondary transition-colors"
-                        >
-                          <span>Google Drive Link</span>
-                          <ExternalLink size={13} />
-                        </a>
+                      {/* Video Caption Footer - Strictly Non-Downloadable Protected Badge */}
+                      <div className="p-3 bg-surface/60 border-t border-border/50 flex flex-col sm:flex-row items-center justify-between text-center sm:text-left gap-2 font-mono text-[0.68rem] text-textMuted tracking-wider uppercase select-none">
+                        <span>Tata Steel Kalinganagar • 3D Kitchen Digital Twin</span>
+                        <div className="flex items-center gap-1.5 text-textMuted font-mono text-[0.68rem] tracking-wider uppercase">
+                          <ShieldCheck size={13} className="text-accent" />
+                          <span>Protected Media • Non-Downloadable</span>
+                        </div>
                       </div>
                     </div>
 
