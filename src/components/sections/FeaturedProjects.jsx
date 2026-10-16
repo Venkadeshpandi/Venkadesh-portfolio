@@ -62,11 +62,17 @@ const PlaceholderImage = ({ text }) => (
   </div>
 );
 
-const CaseStudyVideoPlayer = ({ driveUrl, posterSrc, title, duration, caption }) => {
-  const [isLoaded, setIsLoaded] = useState(false);
-
+const CaseStudyVideoPlayer = ({ 
+  src, 
+  driveUrl, 
+  posterSrc, 
+  title, 
+  duration, 
+  caption, 
+  isPortrait = false 
+}) => {
   return (
-    <div className="w-full max-w-full rounded-xl sm:rounded-2xl overflow-hidden border border-border/80 shadow-[0_0_35px_rgba(10,232,216,0.12)] bg-black relative group mx-auto">
+    <div className={`w-full ${isPortrait ? 'max-w-xs sm:max-w-sm' : 'max-w-full'} rounded-xl sm:rounded-2xl overflow-hidden border border-border/80 shadow-[0_0_35px_rgba(10,232,216,0.12)] bg-black relative group mx-auto`}>
       {/* Video Player Header Bar */}
       <div className="px-3 sm:px-4 py-2.5 sm:py-3 bg-surface/95 border-b border-border/60 flex items-center justify-between gap-2 font-mono text-[0.62rem] sm:text-xs text-textMuted uppercase tracking-wider">
         <div className="flex items-center gap-2 min-w-0">
@@ -74,46 +80,42 @@ const CaseStudyVideoPlayer = ({ driveUrl, posterSrc, title, duration, caption })
           <span className="text-textLight font-medium truncate">{title}</span>
         </div>
         <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
-          <span className="px-2 py-0.5 rounded bg-accent/15 text-accent border border-accent/30 font-bold text-[0.6rem] sm:text-xs">1080p FULL HD</span>
+          <span className="px-2 py-0.5 rounded bg-accent/15 text-accent border border-accent/30 font-bold text-[0.6rem] sm:text-xs">
+            {isPortrait ? 'MOBILE REEL • 1080p' : '1080p FULL HD'}
+          </span>
           {duration && <span className="text-textMuted hidden sm:inline">• {duration}</span>}
         </div>
       </div>
 
-      {/* 16:9 Aspect Ratio Video Viewport */}
-      <div className="relative w-full aspect-video bg-black flex items-center justify-center overflow-hidden" onContextMenu={(e) => e.preventDefault()}>
-        {/* Instant Poster & Sleek Stream Connecting Skeleton */}
-        {!isLoaded && (
-          <div className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-zinc-950 overflow-hidden">
-            {posterSrc && (
-              <img
-                src={posterSrc}
-                alt={title}
-                className="absolute inset-0 w-full h-full object-cover opacity-50 filter blur-[1px]"
-                loading="eager"
-              />
-            )}
-            <div className="relative z-20 flex flex-col items-center gap-2.5 px-3.5 py-2.5 rounded-lg bg-background/90 border border-border/80 shadow-2xl backdrop-blur-md">
-              <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-2 border-accent border-t-transparent animate-spin"></div>
-              <div className="flex items-center gap-2 font-mono text-[0.62rem] sm:text-xs text-textLight uppercase tracking-wider">
-                <span className="w-1.5 h-1.5 rounded-full bg-accent animate-ping"></span>
-                <span>Connecting 1080p Stream...</span>
-              </div>
-            </div>
-          </div>
+      {/* Video Viewport Container */}
+      <div 
+        className={`relative w-full ${isPortrait ? 'aspect-[406/720]' : 'aspect-video'} bg-black flex items-center justify-center overflow-hidden`}
+        onContextMenu={(e) => e.preventDefault()}
+      >
+        {src ? (
+          <video
+            src={src}
+            poster={posterSrc}
+            controls
+            playsInline
+            preload="metadata"
+            controlsList="nodownload"
+            onContextMenu={(e) => e.preventDefault()}
+            className="w-full h-full object-contain select-none bg-black"
+            title={title}
+          >
+            Your browser does not support the video tag.
+          </video>
+        ) : (
+          <iframe
+            src={driveUrl}
+            className="w-full h-full border-0 select-none"
+            allow="autoplay; fullscreen"
+            allowFullScreen
+            loading="lazy"
+            title={title}
+          />
         )}
-
-        {/* Top-Right Overlay Guard: Disables Google Drive Pop-out download button */}
-        <div className="absolute top-0 right-0 w-16 h-14 z-20 pointer-events-auto" title="1080p Full HD Protected Stream" />
-
-        <iframe
-          src={driveUrl}
-          className={`w-full h-full border-0 select-none transition-opacity duration-700 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
-          allow="autoplay; fullscreen"
-          allowFullScreen
-          loading="eager"
-          onLoad={() => setIsLoaded(true)}
-          title={title}
-        />
       </div>
 
       {/* Video Caption Footer - Strictly Non-Downloadable Protected Badge */}
@@ -261,13 +263,14 @@ const CaseStudyModal = ({ project, onClose }) => {
                 <div className="bg-surface/30 border border-border rounded-xl p-3 sm:p-6 md:p-8 backdrop-blur-sm w-full">
                   <div className="space-y-8">
                     
-                    {/* 16:9 Widescreen Video Showcase */}
+                    {/* Mobile Reel Showcase (Native HTML5 Video) */}
                     <CaseStudyVideoPlayer
-                      driveUrl="https://drive.google.com/file/d/1I4rgYpPR5vPW9OD-etXH1gxcXOB5vQIs/preview"
-                      posterSrc={`${import.meta.env.BASE_URL}hyundai-poster.png`}
+                      src={`${import.meta.env.BASE_URL}hyundai-mobile.mp4`}
+                      posterSrc={`${import.meta.env.BASE_URL}hyundai-mobile-poster.jpg`}
                       title="FACILITY TOUR • HYUNDAI MOTOR INDIA"
                       duration="2m 14s"
                       caption="Hyundai Motor India • Industrial Kitchen Facility"
+                      isPortrait={true}
                     />
 
                     {/* Engineering Delivery & Milestone Details */}
@@ -345,13 +348,14 @@ const CaseStudyModal = ({ project, onClose }) => {
                 <div className="bg-surface/30 border border-border rounded-xl p-3 sm:p-6 md:p-8 backdrop-blur-sm w-full">
                   <div className="space-y-8">
                     
-                    {/* 16:9 Widescreen Video Showcase */}
+                    {/* Native 16:9 Widescreen Video Showcase */}
                     <CaseStudyVideoPlayer
-                      driveUrl="https://drive.google.com/file/d/1OuYZ-iipdnRzmhnA2vPeqKv-Ba4wKJ9w/preview"
+                      src={`${import.meta.env.BASE_URL}lloyds-optimized.mp4`}
                       posterSrc={`${import.meta.env.BASE_URL}lloyds-poster.png`}
                       title="FACILITY TOUR • LLOYDS METALS & ENERGY"
                       duration="1m 59s"
                       caption="Lloyds Metals & Energy Limited • Industrial Kitchen Facility"
+                      isPortrait={false}
                     />
 
                     {/* Engineering Delivery & Milestone Highlights */}
@@ -441,13 +445,14 @@ const CaseStudyModal = ({ project, onClose }) => {
                 <div className="bg-surface/30 border border-border rounded-xl p-3 sm:p-6 md:p-8 backdrop-blur-sm w-full">
                   <div className="space-y-8">
                     
-                    {/* 16:9 Widescreen Video Showcase - Default 1080p Full HD */}
+                    {/* Native 16:9 Widescreen Video Showcase */}
                     <CaseStudyVideoPlayer
-                      driveUrl="https://drive.google.com/file/d/1dTq7fVX65Q_IPKheQBRV5PQpE7tD1fKb/preview"
+                      src={`${import.meta.env.BASE_URL}tata-optimized.mp4`}
                       posterSrc={`${import.meta.env.BASE_URL}tata-poster.jpg`}
                       title="3D WALKTHROUGH • TATA STEEL KALINGANAGAR"
                       duration="14m 00s"
                       caption="Tata Steel Kalinganagar • 3D Kitchen Digital Twin"
+                      isPortrait={false}
                     />
 
                     {/* Engineering Delivery & Milestone Details */}
