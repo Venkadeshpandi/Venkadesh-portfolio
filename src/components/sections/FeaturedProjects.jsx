@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, X, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, X, CheckCircle2, ExternalLink } from 'lucide-react';
 
 const projectsData = [
   {
@@ -414,7 +414,7 @@ const CaseStudyModal = ({ project, onClose }) => {
                 </div>
               </div>
 
-              {/* Final Output Slot - Ready for YouTube Walkthrough Video Link */}
+              {/* Final Output - Embedded 3D Walkthrough Video */}
               <div>
                 <div className="flex items-center justify-between mb-6 border-l-2 border-accent pl-4 flex-wrap gap-3">
                   <h3 className="text-xl font-bold text-textMain uppercase">Final Output & 3D Walkthrough Animation</h3>
@@ -424,20 +424,85 @@ const CaseStudyModal = ({ project, onClose }) => {
                   </span>
                 </div>
 
-                <div className="bg-surface/30 border border-dashed border-border rounded-xl p-8 sm:p-12 text-center backdrop-blur-sm relative group">
-                  <div className="max-w-md mx-auto space-y-4">
-                    <div className="w-16 h-16 rounded-full bg-accent/10 border border-accent/30 flex items-center justify-center text-accent mx-auto shadow-[0_0_25px_rgba(10,232,216,0.15)]">
-                      <span className="font-mono text-xl font-bold">3D</span>
+                <div className="bg-surface/30 border border-border rounded-xl p-5 sm:p-6 md:p-8 backdrop-blur-sm">
+                  <div className="space-y-8">
+                    
+                    {/* 16:9 Widescreen Video Showcase */}
+                    <div className="w-full rounded-2xl overflow-hidden border border-border/80 shadow-[0_0_35px_rgba(10,232,216,0.12)] bg-background relative group">
+                      {/* Video Player Header Bar */}
+                      <div className="px-4 py-3 bg-surface/90 border-b border-border/60 flex items-center justify-between font-mono text-[0.65rem] sm:text-xs text-textMuted uppercase tracking-wider">
+                        <div className="flex items-center gap-2">
+                          <span className="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+                          <span className="text-textLight font-medium">3D WALKTHROUGH • TATA STEEL KALINGANAGAR</span>
+                        </div>
+                        <span className="text-accent/90">Full HD • 14m Animation</span>
+                      </div>
+
+                      {/* Google Drive Video Player - 16:9 Widescreen Embed */}
+                      <div className="relative aspect-video bg-black flex items-center justify-center">
+                        <iframe
+                          src="https://drive.google.com/file/d/1dTq7fVX65Q_IPKheQBRV5PQpE7tD1fKb/preview"
+                          className="w-full h-full border-0"
+                          allow="autoplay; fullscreen"
+                          allowFullScreen
+                          title="Tata Steel Kalinganagar 3D Walkthrough Animation"
+                        />
+                      </div>
+
+                      {/* Video Caption Footer */}
+                      <div className="p-3 bg-surface/60 border-t border-border/50 flex flex-col sm:flex-row items-center justify-between text-center sm:text-left gap-2 font-mono text-[0.68rem] text-textMuted tracking-wider uppercase">
+                        <span>Tata Steel Kalinganagar • 3D Kitchen Digital Twin</span>
+                        <a
+                          href="https://drive.google.com/file/d/1dTq7fVX65Q_IPKheQBRV5PQpE7tD1fKb/view?usp=sharing"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 text-accent hover:text-accentSecondary transition-colors"
+                        >
+                          <span>Open in Google Drive</span>
+                          <ExternalLink size={13} />
+                        </a>
+                      </div>
                     </div>
-                    <h4 className="font-display text-xl font-bold uppercase text-textMain tracking-tight">
-                      Walkthrough Video Showcase
-                    </h4>
-                    <p className="text-textMuted text-xs sm:text-sm font-mono leading-relaxed">
-                      Awaiting YouTube link for the 14-minute 3D walkthrough animation. Share the URL to embed the video player here.
-                    </p>
-                    <div className="inline-block px-4 py-2 border border-border/70 bg-background/60 font-mono text-[0.7rem] text-accent tracking-widest uppercase rounded">
-                      Tata Steel Kalinganagar • 14-Min Client Walkthrough
+
+                    {/* Engineering Delivery & Milestone Details */}
+                    <div className="space-y-6">
+                      <div>
+                        <div className="inline-block px-3 py-1 bg-surface/70 border border-border text-accent font-mono text-xs uppercase tracking-widest mb-3">
+                          Tata Steel Kalinganagar • Digital Twin Showcase
+                        </div>
+                        <h4 className="font-display text-2xl sm:text-3xl font-bold uppercase text-textMain tracking-tight mb-3">
+                          Full-Scale 3D Visualization & Walkthrough Animation
+                        </h4>
+                        <p className="text-textMuted text-sm sm:text-base leading-relaxed">
+                          Comprehensive 14-minute 3D walkthrough authoring the entire commercial kitchen architecture at Tata Steel Kalinganagar, Odisha. Features detailed spatial planning, equipment clearances, MEP coordination points, and photorealistic material rendering utilized for executive stakeholder approvals.
+                        </p>
+                      </div>
+
+                      {/* Key Technical Highlights */}
+                      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                        <div className="p-4 bg-background/60 border border-border/70 rounded-lg">
+                          <p className="font-mono text-[0.68rem] uppercase tracking-wider text-accent mb-1">Scope</p>
+                          <p className="text-textMain font-medium text-sm">Full 3D Digital Twin</p>
+                          <p className="text-textMuted text-xs mt-1">Complete facility architecture.</p>
+                        </div>
+                        <div className="p-4 bg-background/60 border border-border/70 rounded-lg">
+                          <p className="font-mono text-[0.68rem] uppercase tracking-wider text-accent mb-1">Duration</p>
+                          <p className="text-textMain font-medium text-sm">14-Minute Tour</p>
+                          <p className="text-textMuted text-xs mt-1">Comprehensive animated walkthrough.</p>
+                        </div>
+                        <div className="p-4 bg-background/60 border border-border/70 rounded-lg">
+                          <p className="font-mono text-[0.68rem] uppercase tracking-wider text-accent mb-1">Role</p>
+                          <p className="text-textMain font-medium text-sm">Mechanical Design Engineer</p>
+                          <p className="text-textMuted text-xs mt-1">Modeling, animation & presentation.</p>
+                        </div>
+                        <div className="p-4 bg-background/60 border border-border/70 rounded-lg">
+                          <p className="font-mono text-[0.68rem] uppercase tracking-wider text-accent mb-1">Output</p>
+                          <p className="text-textMain font-medium text-sm">Client Approval</p>
+                          <p className="text-textMuted text-xs mt-1">Approved for site execution.</p>
+                        </div>
+                      </div>
                     </div>
+
                   </div>
                 </div>
               </div>
