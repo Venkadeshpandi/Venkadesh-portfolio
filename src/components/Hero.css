@@ -1,0 +1,124 @@
+.hud-3d-container {
+  perspective: 1500px;
+}
+
+/* Radar Background */
+.hud-radar-bg {
+  z-index: 10;
+}
+
+/* Orbital Tracks */
+.orbital-track {
+  position: absolute;
+  border: 1px solid rgba(10, 232, 216, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.track-1 { width: 100%; height: 100%; border-style: dashed; }
+.track-2 { width: 80%; height: 80%; border-color: rgba(255, 183, 0, 0.15); }
+.track-3 { width: 60%; height: 60%; }
+.track-4 { width: 40%; height: 40%; border-style: dashed; border-color: rgba(255, 183, 0, 0.15); }
+
+.orbital-node {
+  position: absolute;
+  inset: 0;
+}
+
+.node-1 { animation: spin 14s linear infinite; }
+.node-2 { animation: spin 9s linear infinite reverse; }
+.node-3 { animation: spin 6s linear infinite; }
+.node-4 { animation: spin 11s linear infinite reverse; }
+
+.node-core {
+  position: absolute;
+  top: -4px; /* Centered on the border */
+  left: 50%;
+  margin-left: -4px; /* Half of width */
+  width: 8px;
+  height: 8px;
+  background-color: #0ae8d8;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #0ae8d8, 0 0 20px #0ae8d8;
+}
+
+/* Counter rotate the node cores so they don't invert */
+.node-1 .node-core { animation: spin 14s linear infinite reverse; }
+.node-2 .node-core { animation: spin 9s linear infinite; }
+.node-3 .node-core { animation: spin 6s linear infinite reverse; }
+.node-4 .node-core { animation: spin 11s linear infinite; }
+
+.track-2 .node-core, .track-4 .node-core {
+  background-color: #ffb700;
+  box-shadow: 0 0 10px #ffb700, 0 0 20px #ffb700;
+}
+
+
+/* 3D Wrapper and Card */
+.hud-perspective-wrapper {
+  transform-style: preserve-3d;
+  /* Rotate to match the second image perspective */
+  transform: rotateY(-18deg) rotateX(10deg);
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.hud-perspective-wrapper:hover {
+  transform: rotateY(-12deg) rotateX(5deg);
+}
+
+.hud-glass-card {
+  background: linear-gradient(135deg, rgba(20, 30, 40, 0.6) 0%, rgba(10, 15, 20, 0.3) 100%);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-top-color: rgba(10, 232, 216, 0.4);
+  border-left-color: rgba(10, 232, 216, 0.2);
+  box-shadow: 
+    inset 0 0 30px rgba(10, 232, 216, 0.05),
+    10px 20px 40px rgba(0, 0, 0, 0.6),
+    0 0 10px rgba(10, 232, 216, 0.1);
+  transform: translateZ(0px); /* Base level */
+  border-radius: 12px;
+}
+
+/* Add a subtle scanline effect to the glass card */
+.hud-glass-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 50%, rgba(10, 232, 216, 0.02) 51%);
+  background-size: 100% 4px;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.hud-ahu-image {
+  transform: translateZ(80px); /* Pop out effect */
+  filter: drop-shadow(-10px 20px 15px rgba(0,0,0,0.5)) drop-shadow(0px 0px 10px rgba(10,232,216,0.1));
+}
+
+/* Floating Labels */
+.hud-label {
+  z-index: 30;
+  animation: float 6s ease-in-out infinite;
+}
+.hud-label:nth-child(2) { animation-delay: 1s; }
+.hud-label:nth-child(3) { animation-delay: 2s; }
+.hud-label:nth-child(4) { animation-delay: 3s; }
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.98); opacity: 0.8; }
+  100% { transform: scale(1.02); opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
