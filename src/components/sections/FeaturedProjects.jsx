@@ -215,10 +215,10 @@ const CaseStudyModal = ({ project, onClose }) => {
                           onContextMenu={(e) => e.preventDefault()}
                           playsInline
                           preload="metadata"
-                          poster="/hyundai-poster.png"
+                          poster={`${import.meta.env.BASE_URL}hyundai-poster.png`}
                           className="w-full h-full object-contain"
                         >
-                          <source src="/hyundai%20final%20edited.mp4" type="video/mp4" />
+                          <source src={`${import.meta.env.BASE_URL}hyundai%20final%20edited.mp4`} type="video/mp4" />
                           Your browser does not support the video tag.
                         </video>
                       </div>
@@ -325,10 +325,10 @@ const CaseStudyModal = ({ project, onClose }) => {
                           onContextMenu={(e) => e.preventDefault()}
                           playsInline
                           preload="metadata"
-                          poster="/lloyds-poster.png"
+                          poster={`${import.meta.env.BASE_URL}lloyds-poster.png`}
                           className="w-full h-full object-contain"
                         >
-                          <source src="/lloyds%20metals%20final.mp4" type="video/mp4" />
+                          <source src={`${import.meta.env.BASE_URL}lloyds%20metals%20final.mp4`} type="video/mp4" />
                           Your browser does not support the video tag.
                         </video>
                       </div>
@@ -450,10 +450,10 @@ const CaseStudyModal = ({ project, onClose }) => {
                           onContextMenu={(e) => e.preventDefault()}
                           playsInline
                           preload="metadata"
-                          poster="/tata-poster.jpg"
+                          poster={`${import.meta.env.BASE_URL}tata-poster.jpg`}
                           className="w-full h-full object-contain"
                         >
-                          <source src="/tata%20kalinganagar%20final.mp4" type="video/mp4" />
+                          <source src={`${import.meta.env.BASE_URL}tata%20kalinganagar%20final.mp4`} type="video/mp4" />
                           Your browser does not support the video tag.
                         </video>
                       </div>

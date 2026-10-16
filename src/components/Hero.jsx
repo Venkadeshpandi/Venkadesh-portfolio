@@ -183,7 +183,7 @@ const Hero = () => {
               {/* AHU Wireframe Image - positioned to stick out */}
               <div className="hud-ahu-image absolute -right-[10%] sm:-right-[20%] -bottom-[5%] w-[110%] sm:w-[120%] h-[110%] sm:h-[120%] pointer-events-none z-30">
                 <img 
-                  src="/ahu_wireframe.png" 
+                  src={`${import.meta.env.BASE_URL}ahu_wireframe.png`} 
                   alt="AHU Schematic Wireframe" 
                   className="w-full h-full object-contain object-right-bottom mix-blend-screen"
                 />

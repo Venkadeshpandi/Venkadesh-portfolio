@@ -14,7 +14,7 @@ const certificatesData = [
     description: 'Comprehensive HVAC design training covering Psychometry, duct sizing, AHU selection, equipment selection and sizing, and chilled water systems. 18.5 total hours.',
     skills: ['Psychometry', 'Duct Sizing', 'AHU Selection', 'Chilled Water'],
     credentialId: 'UC-25ddf67d-1a96-40d8-8376-c4b4d3b33503',
-    image: '/cert 1.jpeg',
+    image: `${import.meta.env.BASE_URL}cert 1.jpeg`,
   },
   {
     id: 'cert-2',
@@ -26,7 +26,7 @@ const certificatesData = [
     description: 'Hands-on training in Carrier HAP software for cooling and heating load calculations, Schedules, Spaces. 8.5 total hours.',
     skills: ['Carrier HAP', 'Cooling Load', 'Schedules', 'Spaces'],
     credentialId: 'UC-bbbd00c6-a837-44b3-a2c3-a3d95c14172e',
-    image: '/cert 2.jpeg',
+    image: `${import.meta.env.BASE_URL}cert 2.jpeg`,
   },
   {
     id: 'cert-3',
@@ -38,7 +38,7 @@ const certificatesData = [
     description: 'Complete Revit MEP course covering mechanical duct and piping, 3D modeling,system families, and multi-discipline coordination. 22 total hours.',
     skills: ['Revit MEP', 'BIM Modeling', 'HVAC Systems', 'Duct Routing'],
     credentialId: 'UC-e0b75fb6-2a6a-409c-abb5-269d7cc9e776',
-    image: '/cert 3.jpeg',
+    image: `${import.meta.env.BASE_URL}cert 3.jpeg`,
   },
   {
     id: 'cert-4',
@@ -50,7 +50,7 @@ const certificatesData = [
     description: 'Specialized HVAC design for data centre environments covering real project design,Air flow management , precision cooling, redundancy strategies, and energy efficiency. 16 total hours.',
     skills: ['Data Centre HVAC', 'Precision Cooling', 'Air flow management', 'Redundancy'],
     credentialId: 'UC-ee8e7248-f6d9-4f6a-92df-35d1506be012',
-    image: '/cert 4.jpeg',
+    image: `${import.meta.env.BASE_URL}cert 4.jpeg`,
   },
   {
     id: 'cert-5',
@@ -62,7 +62,7 @@ const certificatesData = [
     description: 'Dassault Systèmes confers the SOLIDWORKS Associate certificate for Mechanical Design. Exam conducted at Coimbatore Cad Solutions Pvt Ltd – EDU. Certified by Manish Kumar, SOLIDWORKS CEO & R&D Vice President.',
     skills: ['SolidWorks', 'Mechanical Design', '3D modeling', 'Assembly Design'],
     credentialId: 'C-XL6VZGC4PA',
-    image: '/cert 5.png',
+    image: `${import.meta.env.BASE_URL}cert 5.png`,
   },
 ];
 
