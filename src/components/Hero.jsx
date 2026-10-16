@@ -21,12 +21,16 @@ const Hero = () => {
             <span className="block">PANDI</span>
           </h1>
 
-          <h2 className="font-display font-normal uppercase text-xl sm:text-2xl md:text-3xl lg:text-[2.5rem] text-textLight tracking-wide mb-6 md:mb-8">
-            HVAC DESIGN ENGINEER
+          <h2 className="font-display font-normal uppercase text-xl sm:text-2xl md:text-3xl lg:text-[2.5rem] text-textLight tracking-wide mb-3 md:mb-4">
+            MECHANICAL DESIGN ENGINEER
           </h2>
           
-          <div className="text-xs sm:text-sm md:text-base font-mono tracking-[0.1em] uppercase text-textMuted mb-5 md:mb-6">
-            Mechanical Design Professional
+          <div className="text-xs sm:text-sm md:text-base font-mono tracking-[0.12em] uppercase text-accent mb-6 md:mb-8 flex flex-wrap items-center gap-2">
+            <span>Mechanical Designer</span>
+            <span className="text-border">•</span>
+            <span>Industrial Kitchens</span>
+            <span className="text-border">•</span>
+            <span>HVAC & MEP</span>
           </div>
           
           <div className="flex flex-wrap items-center gap-2.5 sm:gap-4 font-mono text-[0.65rem] md:text-xs tracking-[0.12em] sm:tracking-[0.15em] uppercase text-textLight mb-8 md:mb-12">
