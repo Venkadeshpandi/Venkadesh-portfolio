@@ -32,7 +32,7 @@ const EngineeringProfile = () => {
           </div>
 
           <p className="text-textMuted text-lg leading-relaxed mb-10 max-w-3xl">
-            <span className="text-textMain font-medium">Venkadesh Pandi</span> is a dedicated <span className="text-accent font-medium">Mechanical Designer</span> & Mechanical Design Engineer with two years of specialized industry experience in commercial & industrial kitchen engineering, turnkey equipment layout, and mechanical MEP coordination for large-scale facilities serving up to 14,000 meal packs per day. Certified in advanced HVAC design covering heat load calculation, duct sizing, AHU selection, and chilled water systems using Carrier HAP, Revit MEP, SolidWorks, and AutoCAD.
+            Mechanical engineer with about two years of experience in industrial kitchen design and mechanical layouts, including facilities serving up to 14,000 meal packs per day. Recently completed HVAC design training covering heat load calculation, duct sizing, AHU selection and chilled water systems, using HAP, Revit MEP and AutoCAD. Looking for an HVAC Design Engineer role in Europe, building on MEP coordination and technical documentation experience from industrial projects.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
