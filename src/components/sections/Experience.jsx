@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const experienceData = [
   {
-    role: "Mechanical Design Engineer",
+    role: "Design Engineer",
     company: "Lorman Kitchen Equipments Pvt. Ltd., Bengaluru, India",
     date: "Nov 2024 – Jul 2026",
     description: "Designed layouts and mechanical systems for industrial kitchens serving up to 14,000 meal packs per day, covering equipment placement, process flow and HVAC planning.",
@@ -17,7 +17,7 @@ const experienceData = [
     ]
   },
   {
-    role: "Junior Mechanical Design Engineer",
+    role: "Junior Design Engineer",
     company: "Freezeton Technologies and Kovai Kiosk, Coimbatore, India",
     date: "Aug 2023 – Feb 2024",
     description: "Prepared mechanical drawings and component designs for industrial equipment and kiosks.",

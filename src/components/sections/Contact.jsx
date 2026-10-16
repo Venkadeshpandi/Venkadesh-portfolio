@@ -95,16 +95,6 @@ const Contact = () => {
               <span className="text-accent text-xs">↓</span>
             </a>
           </div>
-
-          {/* Site Footer */}
-          <div className="mt-20 pt-8 border-t border-border/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-textMuted">
-            <p>
-              © {new Date().getFullYear()} Venkadesh Pandi. All rights reserved.
-            </p>
-            <p className="text-[0.68rem] tracking-wider uppercase">
-              Mechanical Design • Industrial Kitchens & HVAC
-            </p>
-          </div>
         </div>
       </div>
     </section>
