@@ -427,7 +427,7 @@ const CaseStudyModal = ({ project, onClose }) => {
                 <div className="bg-surface/30 border border-border rounded-xl p-5 sm:p-6 md:p-8 backdrop-blur-sm">
                   <div className="space-y-8">
                     
-                    {/* 16:9 Widescreen Video Showcase */}
+                    {/* 16:9 Widescreen Video Showcase - Default 1080p Full HD */}
                     <div className="w-full rounded-2xl overflow-hidden border border-border/80 shadow-[0_0_35px_rgba(10,232,216,0.12)] bg-background relative group">
                       {/* Video Player Header Bar */}
                       <div className="px-4 py-3 bg-surface/90 border-b border-border/60 flex items-center justify-between font-mono text-[0.65rem] sm:text-xs text-textMuted uppercase tracking-wider">
@@ -435,30 +435,39 @@ const CaseStudyModal = ({ project, onClose }) => {
                           <span className="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
                           <span className="text-textLight font-medium">3D WALKTHROUGH • TATA STEEL KALINGANAGAR</span>
                         </div>
-                        <span className="text-accent/90">Full HD • 14m Animation</span>
+                        <div className="flex items-center gap-2">
+                          <span className="px-2 py-0.5 rounded bg-accent/15 text-accent border border-accent/30 font-bold">1080p FULL HD</span>
+                          <span className="text-textMuted hidden sm:inline">• 14m 00s</span>
+                        </div>
                       </div>
 
-                      {/* Google Drive Video Player - 16:9 Widescreen Embed */}
+                      {/* Native HTML5 Video Player - Default 1080p Full HD Resolution */}
                       <div className="relative aspect-video bg-black flex items-center justify-center">
-                        <iframe
-                          src="https://drive.google.com/file/d/1dTq7fVX65Q_IPKheQBRV5PQpE7tD1fKb/preview"
-                          className="w-full h-full border-0"
-                          allow="autoplay; fullscreen"
-                          allowFullScreen
-                          title="Tata Steel Kalinganagar 3D Walkthrough Animation"
-                        />
+                        <video
+                          controls
+                          controlsList="nodownload"
+                          disablePictureInPicture
+                          onContextMenu={(e) => e.preventDefault()}
+                          playsInline
+                          preload="metadata"
+                          poster="/tata-poster.jpg"
+                          className="w-full h-full object-contain"
+                        >
+                          <source src="/tata%20kalinganagar%20final.mp4" type="video/mp4" />
+                          Your browser does not support the video tag.
+                        </video>
                       </div>
 
                       {/* Video Caption Footer */}
                       <div className="p-3 bg-surface/60 border-t border-border/50 flex flex-col sm:flex-row items-center justify-between text-center sm:text-left gap-2 font-mono text-[0.68rem] text-textMuted tracking-wider uppercase">
-                        <span>Tata Steel Kalinganagar • 3D Kitchen Digital Twin</span>
+                        <span>Tata Steel Kalinganagar • 3D Kitchen Digital Twin (1080p Native)</span>
                         <a
                           href="https://drive.google.com/file/d/1dTq7fVX65Q_IPKheQBRV5PQpE7tD1fKb/view?usp=sharing"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="inline-flex items-center gap-1.5 text-accent hover:text-accentSecondary transition-colors"
                         >
-                          <span>Open in Google Drive</span>
+                          <span>Google Drive Link</span>
                           <ExternalLink size={13} />
                         </a>
                       </div>
