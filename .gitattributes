@@ -1,4 +1,2 @@
-# Only raw uncompressed master files tracked by Git LFS
-"public/hyundai final edited.mp4" filter=lfs diff=lfs merge=lfs -text
-"public/lloyds metals final.mp4" filter=lfs diff=lfs merge=lfs -text
-"public/tata kalinganagar final.mp4" filter=lfs diff=lfs merge=lfs -text
+# Auto detect text files and perform LF normalization
+* text=auto
