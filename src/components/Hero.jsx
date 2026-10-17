@@ -22,7 +22,7 @@ const Hero = () => {
           </h1>
 
           <h2 className="font-display font-normal uppercase text-xl sm:text-2xl md:text-3xl lg:text-[2.5rem] text-textLight tracking-wide mb-6 md:mb-8">
-            HVAC DESIGN ENGINEER
+            MECHANICAL DESIGN ENGINEER
           </h2>
           
           <div className="text-xs sm:text-sm md:text-base font-mono tracking-[0.1em] uppercase text-textMuted mb-5 md:mb-6">
